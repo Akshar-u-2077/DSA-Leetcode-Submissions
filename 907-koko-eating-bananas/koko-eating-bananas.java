@@ -8,7 +8,7 @@ class Solution {
         {
             high=Math.max(pile,high);
         }
-        int minspeed=high;
+        //int minspeed=high;
 
         while(low<=high)
         {
@@ -22,7 +22,7 @@ class Solution {
             if(hours<=h)
             {
                 high=mid-1;
-                minspeed=Math.min(minspeed,mid);
+                //minspeed=Math.min(minspeed,mid);
             }
             else if(hours>h)
             {
@@ -32,6 +32,6 @@ class Solution {
             
         }
 
-        return minspeed;
+        return low;
     }
 }
