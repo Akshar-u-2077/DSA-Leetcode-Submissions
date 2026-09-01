@@ -16,31 +16,30 @@ class Solution {
         }
         
         int count=1;
-        ListNode slow=head;
-        ListNode fast=head.next;
-        ListNode prev=slow;
-        while(fast!=null)
-        {
-            while(count!=n)
+        ListNode dummy=new ListNode(0);
+        dummy.next=head;
+        ListNode slow=dummy;
+        ListNode fast=dummy.next;
+        
+        
+        while(count!=n)
             {
                 fast=fast.next;
                 count++;
             }
-            if(fast!=null)
-            {
-            prev=slow;
+        while(fast.next!=null)
+        {
+            
+            
             slow=slow.next;
             fast=fast.next;
-            }
+            
         }
-        if(slow==head)
-        {
-            head=head.next;
-            slow.next=null;
-            return head;
-        }
-        prev.next=slow.next;
-        slow.next=null;
+        
+        //prev.next=slow.next;
+        slow.next=slow.next.next;
+        //slow.next.next=null;
+        head=dummy.next;
         return head;
     }
 }
