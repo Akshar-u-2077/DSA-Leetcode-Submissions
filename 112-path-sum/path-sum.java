@@ -41,7 +41,6 @@ class Solution {
         {   
             return false; 
         }
-        return dfs(root,sum,targetSum);
-        
+        return dfs(root,sum,targetSum);        
     }
 }
