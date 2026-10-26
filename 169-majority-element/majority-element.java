@@ -1,0 +1,35 @@
+class Solution {
+    public int majorityElement(int[] nums) {
+        int count=0;
+        int candidate=nums[0];
+        for(int num:nums)
+        {
+            if(count==0)
+            {
+                candidate=num;
+            }
+            if(candidate==num)
+            {
+                count++;
+            }
+            else if(candidate!=num)
+            {
+                count--;
+            }
+        }
+        
+        for(int num:nums)
+        {
+            if(num==candidate)
+            {
+                count++;
+            }
+            if(count>nums.length/2)
+            {
+                return candidate;
+            }
+        }
+        return candidate;
+        
+    }
+}
