@@ -18,17 +18,7 @@ class Solution {
             }
         }
         
-        for(int num:nums)
-        {
-            if(num==candidate)
-            {
-                count++;
-            }
-            if(count>nums.length/2)
-            {
-                return candidate;
-            }
-        }
+        
         return candidate;
         
     }
