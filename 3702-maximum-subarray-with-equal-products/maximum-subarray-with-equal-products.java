@@ -1,15 +1,15 @@
 class Solution {
-    private long gcd(long a, long b) {
+    private int gcd(int a, int b) {
         while (b != 0) {
-            long temp = b;
+            int temp = b;
             b = a % b;
             a = temp;
         }
         return a;
     }
 
-    // Safe LCM using long and divide-before-multiply
-    private long lcm(long a, long b) {
+    
+    private int lcm(int a, int b) {
         if (a == 0 || b == 0) return 0;
         return (a / gcd(a, b)) * b;
     }
@@ -23,13 +23,13 @@ class Solution {
         for(int i=0;i<nums.length;i++)
         {
             int prod=nums[i];
-            long cur_gcd=(long)nums[i];
-            long cur_lcm=(long)nums[i];
+            int cur_gcd=nums[i];
+            int cur_lcm=nums[i];
             for(int j=i+1;j<nums.length;j++)
             {
                 prod*=nums[j];
-                cur_gcd= gcd(cur_gcd,(long)nums[j]);
-                cur_lcm=lcm(cur_lcm,(long)nums[j]);
+                cur_gcd= gcd(cur_gcd,nums[j]);
+                cur_lcm=lcm(cur_lcm,nums[j]);
                 if(prod==cur_gcd*cur_lcm)
                 {
                     count=j-i+1;
